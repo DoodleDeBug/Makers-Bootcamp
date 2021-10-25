@@ -8,7 +8,7 @@ This is the week 1 Maker's pairing challenge.
 ## Build status
 In progress
 
-## Screenshots
+## IRB Snippets
 Tbc
 
 ## Tech/framework used
@@ -21,8 +21,8 @@ Tbc
 Tbc
 
 ## Tests
-Describe and show how to run the tests with code examples.
 
-## How to use?
-
-tbc
+1. Fork and clone this repo
+2. `cd` into the Boris-Bikes folder
+3. Run Bundle
+4. Run Rspec
