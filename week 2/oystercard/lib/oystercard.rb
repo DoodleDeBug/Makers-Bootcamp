@@ -13,4 +13,9 @@ class Oystercard
     @balance += amount
   end
 
+  def deduct(amount)
+    fail "Cannot deduct anymore - you will have a negative balance" if balance - amount < 0
+    @balance -= amount
+  end
+
 end
