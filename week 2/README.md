@@ -1,5 +1,5 @@
 # Week 2 
 
-## Pair Challenge: 
+## Pair Challenge: Oystercard
 
-## Weekend Challenge:
+## Weekend Challenge: Takeaway
