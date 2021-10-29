@@ -49,8 +49,20 @@ describe Oystercard do
     expect(card.in_journey?).to eq(false)
   end
 
-  it 'raises error if touch_in with balance less than 1' do
-    expect {subject.touch_in}.to raise_error("Insufficient funds to touch in")
+  describe '#touch_in' do
+    it 'raises error if touch_in with balance less than the minimum fare' do
+      expect {subject.touch_in}.to raise_error("Insufficient funds to touch in")
+    end
   end
+
+  describe '#touch_out' do
+    it 'deducts minimum fare from balance' do
+      card = Oystercard.new
+      card.top_up(10)
+      card.touch_in
+      expect {card.touch_out}.to change {card.balance}.by(-Oystercard::MIN_FARE)
+    end
+  end
+
 
 end
