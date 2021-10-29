@@ -3,19 +3,21 @@
 require_relative './../lib/oystercard'
 
 describe Oystercard do
+
+  let(:station) { double('station', name: 'Camden') }
+
   it 'has a default balance of 0' do
     expect(subject.balance).to eq(0)
   end
 
   it 'responds to top_up method' do
-    card = Oystercard.new
-    expect { card.top_up(10) }.to change { card.balance }.by(10)
+
+    expect { subject.top_up(10) }.to change { subject.balance }.by(10)
   end
 
   it 'raises error if balance would exceed limit' do
-    card = Oystercard.new
-    card.top_up(subject.limit)
-    expect { card.top_up(1) }.to raise_error("Cannot top up anymore - you will exceed your limit of #{subject.limit}")
+    subject.top_up(subject.limit)
+    expect { subject.top_up(1) }.to raise_error("Cannot top up anymore - you will exceed your limit of #{subject.limit}")
   end
 
   it 'responds to in_journey?' do
@@ -23,32 +25,38 @@ describe Oystercard do
   end
 
   it 'responds to touch_in' do
-    card = Oystercard.new
-    card.top_up(10)
-    card.touch_in
-    expect(card.in_journey?).to eq(true)
+
+    subject.top_up(10)
+    subject.touch_in(station.name)
+    expect(subject.in_journey?).to eq(true)
   end
 
   it 'responds to touch_out' do
-    card = Oystercard.new
-    card.top_up(10)
-    card.touch_in
-    card.touch_out
-    expect(card.in_journey?).to eq(false)
+
+    subject.top_up(10)
+    subject.touch_in(station.name)
+    subject.touch_out
+    expect(subject.in_journey?).to eq(false)
   end
 
   describe '#touch_in' do
     it 'raises error if touch_in with balance less than the minimum fare' do
-      expect { subject.touch_in }.to raise_error('Insufficient funds to touch in')
+      expect { subject.touch_in(station.name) }.to raise_error('Insufficient funds to touch in')
+    end
+
+    it 'remembers entry station when you touch_in' do
+      subject.top_up(10)
+      expect{subject.touch_in(station.name)}.to change{subject.entry_station}.to station.name
     end
   end
 
   describe '#touch_out' do
     it 'deducts minimum fare from balance' do
-      card = Oystercard.new
-      card.top_up(10)
-      card.touch_in
-      expect { card.touch_out }.to change { card.balance }.by(-Oystercard::MIN_FARE)
+
+      subject.top_up(10)
+      subject.touch_in(station.name)
+      expect { subject.touch_out }.to change { subject.balance }.by(-Oystercard::MIN_FARE)
     end
   end
+
 end
