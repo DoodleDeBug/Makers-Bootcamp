@@ -1,6 +1,6 @@
 class Oystercard
   LIMIT = 90
-  MIN_FARE = 1
+  MIN_FARE = 2
 
   attr_reader :balance, :limit
 
@@ -15,11 +15,6 @@ class Oystercard
     @balance += amount
   end
 
-  def deduct(amount)
-    fail "Cannot deduct anymore - you will have a negative balance" if balance - amount < 0
-    @balance -= amount
-  end
-
   def in_journey?
     @in_journey
   end
@@ -30,7 +25,14 @@ class Oystercard
   end
 
   def touch_out
+    deduct(MIN_FARE)
     @in_journey = false
-    @balance -= MIN_FARE
+  end
+
+  private
+
+  def deduct(amount)
+    fail "Cannot deduct anymore - you will have a negative balance" if balance - amount < 0
+    @balance -= amount
   end
 end
