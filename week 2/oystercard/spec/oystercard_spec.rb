@@ -1,4 +1,6 @@
-require_relative './../lib/oystercard.rb'
+# frozen_string_literal: true
+
+require_relative './../lib/oystercard'
 
 describe Oystercard do
   it 'has a default balance of 0' do
@@ -7,13 +9,13 @@ describe Oystercard do
 
   it 'responds to top_up method' do
     card = Oystercard.new
-    expect {card.top_up(10)}.to change {card.balance}.by(10)
+    expect { card.top_up(10) }.to change { card.balance }.by(10)
   end
 
   it 'raises error if balance would exceed limit' do
     card = Oystercard.new
     card.top_up(subject.limit)
-    expect {card.top_up(1)}.to raise_error("Cannot top up anymore - you will exceed your limit of #{subject.limit}")
+    expect { card.top_up(1) }.to raise_error("Cannot top up anymore - you will exceed your limit of #{subject.limit}")
   end
 
   it 'responds to in_journey?' do
@@ -37,7 +39,7 @@ describe Oystercard do
 
   describe '#touch_in' do
     it 'raises error if touch_in with balance less than the minimum fare' do
-      expect {subject.touch_in}.to raise_error("Insufficient funds to touch in")
+      expect { subject.touch_in }.to raise_error('Insufficient funds to touch in')
     end
   end
 
@@ -46,9 +48,7 @@ describe Oystercard do
       card = Oystercard.new
       card.top_up(10)
       card.touch_in
-      expect {card.touch_out}.to change {card.balance}.by(-Oystercard::MIN_FARE)
+      expect { card.touch_out }.to change { card.balance }.by(-Oystercard::MIN_FARE)
     end
   end
-
-
 end

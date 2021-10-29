@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This class describes an oystercard
 class Oystercard
   LIMIT = 90
   MIN_FARE = 2
@@ -11,7 +14,8 @@ class Oystercard
   end
 
   def top_up(amount)
-    fail "Cannot top up anymore - you will exceed your limit of #{LIMIT}" if amount + balance > LIMIT
+    raise "Cannot top up anymore - you will exceed your limit of #{LIMIT}" if amount + balance > LIMIT
+
     @balance += amount
   end
 
@@ -20,7 +24,8 @@ class Oystercard
   end
 
   def touch_in
-    fail "Insufficient funds to touch in" if @balance < MIN_FARE
+    raise 'Insufficient funds to touch in' if @balance < MIN_FARE
+
     @in_journey = true
   end
 
@@ -32,7 +37,8 @@ class Oystercard
   private
 
   def deduct(amount)
-    fail "Cannot deduct anymore - you will have a negative balance" if balance - amount < 0
+    raise 'Cannot deduct anymore - you will have a negative balance' if (balance - amount).negative?
+
     @balance -= amount
   end
 end
