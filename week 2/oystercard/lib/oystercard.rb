@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
-# This class describes an oystercard
 class Oystercard
   LIMIT = 90
   MIN_FARE = 2
 
-  attr_reader :balance, :limit, :entry_station
+  attr_reader :balance, :limit, :entry_station, :exit_station, :journeys
 
   def initialize
     @balance = 0
     @limit = LIMIT
+    @journeys = []
+   
   end
 
   def top_up(amount)
@@ -26,9 +27,10 @@ class Oystercard
     @entry_station = station
   end
 
-  def touch_out
+  def touch_out(station)
     deduct(MIN_FARE)
-    @entry_station = nil
+    @exit_station = station
+    record_current_journey
   end
 
   private
@@ -37,4 +39,10 @@ class Oystercard
     raise 'Cannot deduct anymore - you will have a negative balance' if (balance - amount).negative?
     @balance -= amount
   end
+
+  def record_current_journey
+    @journeys << {:entry => @entry_station, :exit => @exit_station}
+    @entry_station = nil
+  end
+
 end

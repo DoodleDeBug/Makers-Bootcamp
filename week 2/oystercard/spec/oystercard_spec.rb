@@ -35,7 +35,7 @@ describe Oystercard do
 
     subject.top_up(10)
     subject.touch_in(station.name)
-    subject.touch_out
+    subject.touch_out(station.name)
     expect(subject.in_journey?).to eq(false)
   end
 
@@ -55,8 +55,26 @@ describe Oystercard do
 
       subject.top_up(10)
       subject.touch_in(station.name)
-      expect { subject.touch_out }.to change { subject.balance }.by(-Oystercard::MIN_FARE)
+      expect { subject.touch_out(station.name) }.to change { subject.balance }.by(-Oystercard::MIN_FARE)
     end
+
+    it 'remembers exit station when you touch_out' do
+      subject.top_up(10)
+      subject.touch_in(station.name)
+      expect{subject.touch_out(station.name)}.to change{subject.exit_station}.to station.name
+    end
+  end
+
+  it 'has an empty list of journeys by default' do
+    expect(subject.journeys).to be_empty
+  end
+
+  it 'stores current journey in journey array when touching out' do
+    subject.top_up(10)
+    subject.touch_in(station.name)
+    subject.touch_out(station.name)
+
+    expect(subject.journeys).not_to be_empty
   end
 
 end
