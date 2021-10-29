@@ -35,14 +35,22 @@ describe Oystercard do
   end
 
   it 'responds to touch_in' do
-    subject.touch_in
-    expect(subject.in_journey?).to eq(true)
+    card = Oystercard.new
+    card.top_up(10)
+    card.touch_in
+    expect(card.in_journey?).to eq(true)
   end
 
   it 'responds to touch_out' do
-    subject.touch_in
-    subject.touch_out
-    expect(subject.in_journey?).to eq(false)
+    card = Oystercard.new
+    card.top_up(10)
+    card.touch_in
+    card.touch_out
+    expect(card.in_journey?).to eq(false)
+  end
+
+  it 'raises error if touch_in with balance less than 1' do
+    expect {subject.touch_in}.to raise_error("Insufficient funds to touch in")
   end
 
 end
