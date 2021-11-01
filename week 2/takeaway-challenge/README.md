@@ -33,4 +33,5 @@ How to use
 
 IRB Examples
 -----
+![image](https://user-images.githubusercontent.com/75613073/139663402-42c211b0-9a87-4f18-be6d-8768c76a57c4.png)
 
