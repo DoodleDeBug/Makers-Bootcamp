@@ -8,7 +8,4 @@ When the user submits the form, and depending on the current date, the app will 
 * tell them how long they'll have to wait until their next birthday
 
 ## Proposed screens:
-
-<img alt="Birthday first page" src="./images/birthday_app_1.png" width="400px" style="display: block;" />
-<img alt="Birthday greet" src="./images/birthday_app_3.png" width="400px" style="display: block;" />
-<img alt="Birthday counter" src="./images/birthday_app_2.png" width="400px" style="display: block;" />
+![image](https://user-images.githubusercontent.com/75613073/139825297-3dc75171-d5fa-4cce-832c-8e8249c5a05f.png)
