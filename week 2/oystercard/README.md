@@ -1,5 +1,7 @@
 # Oystercard
 
+This week we were challenged to build a more complex system which stretched our skills in Ruby, TDD and object-oriented design. We had to implement the following user stories to simulate an oystercard.
+
 ## User Stories
 
 ```
