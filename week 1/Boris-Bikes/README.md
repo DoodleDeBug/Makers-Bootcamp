@@ -6,7 +6,7 @@ This is a program that will emulate all the docking stations, bikes, and infrast
 This is the week 1 Maker's pairing challenge.
 
 ## Build status
-In progress
+Incomplete
 
 ## IRB Snippets
 Tbc
@@ -16,9 +16,6 @@ Tbc
 <b>Built with</b>
 - Ruby
 - Rspec
-
-## Features
-Tbc
 
 ## Tests
 
