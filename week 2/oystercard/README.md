@@ -1,6 +1,6 @@
 # Oystercard
 
-This week we were challenged to build a more complex system which stretched our skills in Ruby, TDD and object-oriented design. We had to implement the following user stories to simulate an oystercard.
+This week we were challenged to build a more complex system which stretched our skills in Ruby, TDD and object-oriented design. We had to implement the following user stories to simulate an oystercard. I managed to complete 10 out of 12 user stories (as of 3/11/21)
 
 ## User Stories
 
