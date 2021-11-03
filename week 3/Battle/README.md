@@ -1,5 +1,22 @@
 # Battle
 
+
+## Tests
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Run `bundle`
+4. Run `rspec`
+
+
+## To Play
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Run `bundle`
+4. Run `rackup config.ru`
+5. Open the url in a browser
+
 ## User Stories
 
 ```
@@ -40,9 +57,4 @@ So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
 ```
 
-## Tests
 
-1. Fork and clone this repo
-2. `cd` into the folder
-3. Run `bundle`
-4. Run `rspec`
