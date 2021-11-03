@@ -53,3 +53,11 @@ In order to be charged the correct amount
 As a customer
 I need to have the correct fare calculated
 ```
+
+## Tests
+
+1. Fork and clone this repo
+2. `cd` into the Boris-Bikes folder
+3. Run Bundle
+4. Run Rspec
+
