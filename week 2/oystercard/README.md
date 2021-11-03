@@ -54,6 +54,13 @@ As a customer
 I need to have the correct fare calculated
 ```
 
+## Tech/framework used
+
+<b>Built with</b>
+- Ruby
+- Rspec
+
+
 ## Tests
 
 1. Fork and clone this repo
