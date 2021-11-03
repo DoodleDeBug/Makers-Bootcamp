@@ -2,6 +2,7 @@
 
 ## User Stories
 
+```
 As two Players,
 So we can play a personalised game of Battle,
 We want to Start a fight by entering our Names and seeing them
@@ -37,7 +38,7 @@ I want Player 2's attack to reduce my HP by 10
 As a Player,
 So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
-
+```
 
 ## Tests
 
