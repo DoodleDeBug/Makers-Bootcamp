@@ -1,4 +1,29 @@
-<form action="/">
+<form action="/" method="post">
+  <p>What's your name?</p>
   <input type="text" name="name">
-  <input type="submit" value="Submit">
+
+  <p>When's your birthday?</p>
+  <label for="day">day:</label>
+  <input type="number" name="day" min="1" max="31">
+  <label for="day">month:</label>
+
+  <select name="month" >
+  <option value="january">January</option>
+  <option value="february">February</option>
+  <option value="march">March</option>
+  <option value="april">April</option>
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+  <option value="september">September</option>
+  <option value="october">October</option>
+  <option value="november">November</option>
+  <option value="december">December</option>
+</select>
+
+
+
+
+  <input type="submit" value="Go!">
 </form>
