@@ -1,5 +1,7 @@
 # Oystercard
 
+This week we were challenged to build a more complex system which stretched our skills in Ruby, TDD and object-oriented design. We had to implement the following user stories to simulate an oystercard. I managed to complete 10 out of 12 user stories (as of 3/11/21)
+
 ## User Stories
 
 ```
@@ -51,3 +53,18 @@ In order to be charged the correct amount
 As a customer
 I need to have the correct fare calculated
 ```
+
+## Tech/framework used
+
+<b>Built with</b>
+- Ruby
+- Rspec
+
+
+## Tests
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Run `bundle`
+4. Run `rspec`
+
