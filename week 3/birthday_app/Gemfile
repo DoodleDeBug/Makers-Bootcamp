@@ -6,3 +6,7 @@ group :development do
   gem "sinatra"
   gem "sinatra-contrib"
 end
+
+group :development, :test do
+  gem "rspec"
+end

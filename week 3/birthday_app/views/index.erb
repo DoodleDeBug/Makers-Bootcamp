@@ -1,12 +1,14 @@
-<form action="/" method="post">
+<form action="/birthday-msg" method="post">
+
   <p>What's your name?</p>
   <input type="text" name="name">
 
   <p>When's your birthday?</p>
+
   <label for="day">day:</label>
   <input type="number" name="day" min="1" max="31">
-  <label for="day">month:</label>
 
+  <label for="day">month:</label>
   <select name="month" >
   <option value="january">January</option>
   <option value="february">February</option>
@@ -21,9 +23,6 @@
   <option value="november">November</option>
   <option value="december">December</option>
 </select>
-
-
-
 
   <input type="submit" value="Go!">
 </form>
