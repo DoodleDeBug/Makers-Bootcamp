@@ -16,15 +16,17 @@ class Greeter < Sinatra::Base
 
   post '/birthday' do
 
-    @name = params[:name]
+    session[:name] = params[:name]
 
     @day = params[:day]
     @month = params[:month]
 
     @countdown = Birthday.new(@day, @month).calculate
 
+    session[:countdown] = @countdown
+
     unless @countdown == 0 then 
-      redirect('/countdown') 
+      redirect('/countdown')
     end
 
     erb(:birthday)
@@ -32,7 +34,8 @@ class Greeter < Sinatra::Base
   end
 
   get '/countdown' do
-
+    @name = session[:name]
+    @countdown =  session[:countdown]
     erb(:countdown)
   end
 
