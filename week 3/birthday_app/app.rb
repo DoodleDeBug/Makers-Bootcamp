@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/birthday.rb'
+require 'date'
+
 
 
 class Greeter < Sinatra::Base
@@ -18,10 +20,10 @@ class Greeter < Sinatra::Base
 
     session[:name] = params[:name]
 
-    @day = params[:day]
-    @month = params[:month]
+    @day = params[:day].to_i
+    @month = params[:month].to_i
 
-    @countdown = Birthday.new(@day, @month).calculate
+    @countdown = Birthday.new(@day, @month).calculate(Date.today)
 
     session[:countdown] = @countdown
 
