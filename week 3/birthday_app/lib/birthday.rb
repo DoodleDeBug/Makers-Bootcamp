@@ -1,5 +1,3 @@
-require 'date'
-
 class Birthday
 
   attr_reader :day, :month
@@ -9,9 +7,16 @@ class Birthday
     @month = month
   end
 
-  def calculate
-    current_day = Date.today.mday
-    current_month = Date.today.mon
+  def calculate(today)
+    current_day = today.mday
+    current_month = today.mon
+
+    days_left = @day - current_day
+    months_left = @month - current_month
+
+    months_left < 0 ? months_left = -(months_left) : nil
+
+    total_days_left = days_left + (months_left * 30)
 
   end
 
