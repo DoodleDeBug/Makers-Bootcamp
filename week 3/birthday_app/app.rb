@@ -1,9 +1,10 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/birthday.rb'
 
 
-class Birthday < Sinatra::Base
+class Greeter < Sinatra::Base
   enable :sessions
   configure :development do
     register Sinatra::Reloader
@@ -31,6 +32,7 @@ class Birthday < Sinatra::Base
   end
 
   get '/countdown' do
+
     erb(:countdown)
   end
 
