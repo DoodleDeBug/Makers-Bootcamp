@@ -5,11 +5,11 @@ describe Birthday do
   subject(:bday) { Birthday.new(8, 11) }
   
   it 'has a day instance variable' do
-    expect(bday.day).to eq(5)
+    expect(bday.day).to eq(8)
   end
 
   it 'has a month instance variable' do
-    expect(bday.month).to eq(1)
+    expect(bday.month).to eq(11)
   end
 
   it 'calculates the days till your birthday' do
