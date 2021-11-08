@@ -14,7 +14,7 @@
 1. Fork and clone this repo
 2. `cd` into the folder
 3. Run `bundle`
-4. Run `rackup config.ru`
+4. Run `rackup`
 5. Open the url in a browser
 
 ## User Stories
