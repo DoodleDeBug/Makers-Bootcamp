@@ -1,5 +1,5 @@
 # Week 4
 
-## Pair Challenge: Book Manager
+## Pair Challenge: Bookmark Manager
 
 ## Weekend Challenge: Chitter
