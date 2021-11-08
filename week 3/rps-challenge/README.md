@@ -34,9 +34,9 @@ Hints on functionality
 6. Play
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/75613073/140729562-8e7a769c-123d-450d-83d3-38e6b13a518b.png)
+![image](https://user-images.githubusercontent.com/75613073/140729857-433b4c2b-2509-46e1-b331-9e4cfd5bbbb7.png)
 ![image](https://user-images.githubusercontent.com/75613073/140729665-1bc55cab-eb36-4fc9-bdaf-6aee3310cf1a.png)
-![image](https://user-images.githubusercontent.com/75613073/140729722-fa78a6ab-63b2-48dc-8a72-ac511bdfb8fc.png)
+![image](https://user-images.githubusercontent.com/75613073/140729916-0551ec42-6ec7-4ac6-8108-703735ae88f2.png)
 
 
 
