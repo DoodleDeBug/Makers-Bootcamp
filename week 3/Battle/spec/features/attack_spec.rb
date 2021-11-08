@@ -9,7 +9,7 @@ feature 'attack' do
     sign_in_and_play
     click_link 'Attack'
     click_link 'Return'
-    expect($player_two.hp).to eq 50
+    expect($game.player_2.hp).to eq 50
   end
 
 end
