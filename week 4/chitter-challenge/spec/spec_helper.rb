@@ -2,9 +2,8 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require_relative '../spec/setup_test_database'require 'simplecov'
+require 'simplecov'
 require 'simplecov-console'
-
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -14,6 +13,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['RACK_ENV'] = 'test'
+
+# Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# Tell Capybara to talk to Chitter
+Capybara.app = Chitter
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
@@ -22,11 +29,3 @@ RSpec.configure do |config|
   end
 end
 
-
-ENV['RACK_ENV'] = 'test'
-
-# Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-
-# Tell Capybara to talk to Chitter
-Capybara.app = Chitter
