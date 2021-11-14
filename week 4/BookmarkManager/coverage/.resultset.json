@@ -1,12 +1,29 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/deanlewis/makers/BookmarkManager/spec/bookmark_spec.rb": {
+      "/Users/ginnythomas/Documents/Projects/PairingPartners/Madihah/BookmarkManager/spec/bookmark_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ginnythomas/Documents/Projects/PairingPartners/Madihah/BookmarkManager/spec/features/homepage_spec.rb": {
+        "lines": [
           1,
           1,
           1,
@@ -15,28 +32,18 @@
           null
         ]
       },
-      "/Users/deanlewis/makers/BookmarkManager/lib/bookmark.rb": {
+      "/Users/ginnythomas/Documents/Projects/PairingPartners/Madihah/BookmarkManager/spec/features/view_bookmark_spec.rb": {
         "lines": [
           1,
-          1,
-          2,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/deanlewis/makers/BookmarkManager/spec/features/homepage_spec.rb": {
-        "lines": [
-          1,
-          1,
           1,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/deanlewis/makers/BookmarkManager/spec/features/view_bookmark_spec.rb": {
-        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -49,6 +56,6 @@
         ]
       }
     },
-    "timestamp": 1636384767
+    "timestamp": 1636736138
   }
 }
