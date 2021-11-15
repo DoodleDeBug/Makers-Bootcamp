@@ -5,7 +5,7 @@ feature 'posting a peep' do
     click_on 'New Peep'
 
     within('form') { 
-      expect(page).to have_content 'Enter your peep'
+      expect(page).to have_content 'Your Peep:'
       expect(page).to have_content 'Post Peep'
     }
 
@@ -14,11 +14,10 @@ feature 'posting a peep' do
   scenario 'my peep shows up on homepage when i hit "post peep" button' do
     visit '/'
     click_on 'New Peep'
-    fill_in'Your Peep', with:'This is my first peep!'
+    fill_in 'peep', with: 'This is my first peep!'
     click_button 'Post Peep'
     expect(page).to have_content 'This is my first peep!'
   end
-
 
   # scenario 'peep includes user handle' do
     

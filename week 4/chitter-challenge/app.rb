@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
     erb :peep_form
   end
 
-  get'/view_peeps' do
+  get '/view_peeps' do
     @peeps = session[:peeps]
     erb :view_peeps
   end
