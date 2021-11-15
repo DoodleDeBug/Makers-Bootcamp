@@ -8,11 +8,18 @@ A bookmark manager is a website to maintain a collection of bookmarks (URLs). Yo
 2. Run `rackup`
 3. To view bookmarks, navigate to `localhost:3000/bookmarks`
 
-## How to set up the database
+## How to set up the production database
 
 1. Connect to `psql`
 2. Create the database using the `psql` command `CREATE DATABASE bookmark_manager;`
 3. Connect to the database using the `pqsl` command `\c bookmark_manager;`
+4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
+
+## How to set up the test database
+
+1. Connect to `psql`
+2. Create the database using the `psql` command `CREATE DATABASE bookmark_manager_test;`
+3. Connect to the database using the `pqsl` command `\c bookmark_manager_test;`
 4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
 
 ## To run tests
