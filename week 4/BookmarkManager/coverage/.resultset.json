@@ -7,16 +7,12 @@
           null,
           1,
           1,
+          1,
+          1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          null,
+          null,
           null,
           null,
           null
@@ -26,8 +22,8 @@
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -35,20 +31,10 @@
       "/home/madihah/Coding/Makers/Makers-Bootcamp/week 4/BookmarkManager/spec/features/view_bookmark_spec.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           0,
           0,
           null,
@@ -56,6 +42,6 @@
         ]
       }
     },
-    "timestamp": 1636883620
+    "timestamp": 1636981950
   }
 }
