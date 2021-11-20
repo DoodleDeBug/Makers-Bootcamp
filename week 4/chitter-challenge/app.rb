@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/peep.rb'
+require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
   enable :sessions
@@ -10,6 +10,7 @@ class Chitter < Sinatra::Base
   
 
   get '/' do
+    @peeps = Peep.all
     erb :index
   end
 
@@ -17,16 +18,10 @@ class Chitter < Sinatra::Base
     erb :peep_form
   end
 
-  get '/view_peeps' do
-    session[:peeps] = Peep.all
-    @peeps = session[:peeps]
-    erb :view_peeps
-  end
-
   post '/view_peeps' do
-    session[:peeps].push(Peep.new("user","username", params[:peep])) 
-    @peeps = session[:peeps]
-    erb :view_peeps
+    Peep.create(name: params[:name], username: params[:username], peep: params[:peep])
+    
+    redirect '/'
   end
 
   

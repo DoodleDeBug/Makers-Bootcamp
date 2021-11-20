@@ -5,8 +5,27 @@ Challenge:
 -------
 Write a small Twitter clone that will allow the users to post messages to a public stream.
 
-# Usage + how to run tests:
+## Usage + how to run tests:
 
+   - `cd` into folder
+   - Run `bundle`
+
+### Setting up the database:
+
+  - Connect to psql
+  - Create the database using the psql command CREATE DATABASE chitter;
+  - Connect to the database using the pqsl command \c chitter;
+  - Run the query saved in the file 01_create_peeps_table.sql
+
+### Running tests:
+
+  - Create a test database with the steps above called `chitter_test`
+  - Run the query saved in the file 01_create_peeps_table.sql
+  - Run `rspec`
+
+### Live View:
+
+  - Run `rackup`
 
 
 Features:
