@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/madihah/Coding/Makers/rps-challenge/spec/ai_spec.rb": {
+      "/home/madihah/Coding/Makers/Makers-Bootcamp/week 3/rps-challenge/spec/ai_spec.rb": {
         "lines": [
           1,
           null,
@@ -31,7 +31,7 @@
           null
         ]
       },
-      "/home/madihah/Coding/Makers/rps-challenge/spec/features/form_spec.rb": {
+      "/home/madihah/Coding/Makers/Makers-Bootcamp/week 3/rps-challenge/spec/features/form_spec.rb": {
         "lines": [
           1,
           null,
@@ -43,7 +43,7 @@
           null
         ]
       },
-      "/home/madihah/Coding/Makers/rps-challenge/spec/features/web_helpers.rb": {
+      "/home/madihah/Coding/Makers/Makers-Bootcamp/week 3/rps-challenge/spec/features/web_helpers.rb": {
         "lines": [
           1,
           5,
@@ -52,7 +52,7 @@
           null
         ]
       },
-      "/home/madihah/Coding/Makers/rps-challenge/spec/features/rps_spec.rb": {
+      "/home/madihah/Coding/Makers/Makers-Bootcamp/week 3/rps-challenge/spec/features/rps_spec.rb": {
         "lines": [
           1,
           null,
@@ -87,6 +87,6 @@
         ]
       }
     },
-    "timestamp": 1636309425
+    "timestamp": 1637325063
   }
 }
