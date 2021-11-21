@@ -13,14 +13,12 @@ Write a small Twitter clone that will allow the users to post messages to a publ
 ### Setting up the database:
 
   - Connect to psql
-  - Create the database using the psql command CREATE DATABASE chitter;
-  - Connect to the database using the pqsl command \c chitter;
-  - Run the query saved in the file 01_create_peeps_table.sql
+  - Create the databases using the commands `CREATE DATABASE chitter;` and `CREATE DATABASE chitter_test;`
+  - Connect to each database using the respective commands `\c chitter;` and `\c chitter_test;`
+  - Run the query saved in the file 01_create_peeps_table.sql for each database
 
 ### Running tests:
 
-  - Create a test database with the steps above called `chitter_test`
-  - Run the query saved in the file 01_create_peeps_table.sql
   - Run `rspec`
 
 ### Live View:
