@@ -1,17 +1,19 @@
 class ShoppingBasket {
-  // constructor() {
-  //   this.discount = 0;
-  // }
-  // applyDiscount(discount) {
-  //   discount = this.discount;
-  // }
-  // getTotalPrice() {
-  //   let totalPrice = 0;
-  //   this.candies.forEach((candy) => {
-  //     totalPrice += candy.getPrice();
-  //   });
-  //   return totalPrice - this.discount;
-  // }
+  constructor() {
+    this.content = [];
+  }
+
+  addItem(item) {
+    this.content.push(item);
+  }
+
+  getTotalPrice() {
+    let totalPrice = 0;
+    this.content.forEach((item) => {
+      totalPrice += item.getPrice();
+    });
+    return totalPrice;
+  }
 }
 
 module.exports = ShoppingBasket;
