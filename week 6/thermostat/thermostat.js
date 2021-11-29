@@ -1,7 +1,8 @@
 class Thermostat {
-  constructor() {
+  constructor(weather) {
     this.temp = 20;
     this.max_temp = 25;
+    this.weather = weather;
   }
 
   getMaxTemp() {
@@ -46,6 +47,14 @@ class Thermostat {
     } else {
       return "high-usage";
     }
+  }
+
+  setCity(city) {
+    let data = this.weather.fetchWeatherData(city, (weatherData) => {
+      return weatherData;
+    });
+
+    this.temp = data.main.temp;
   }
 }
 
