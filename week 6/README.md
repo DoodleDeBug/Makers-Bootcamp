@@ -4,4 +4,4 @@
 
 Using JS for the first time at Makers.
 
-## Weekend Challenge: Bowling
+## Weekend Challenge: Bowling JS
