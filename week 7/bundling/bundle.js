@@ -19,9 +19,20 @@
   var fetchGithubRepo = require_fetchGithubRepo();
   var repoName = document.querySelector("#repo_name");
   var button = document.querySelector("#btn");
+  var name = document.querySelector("#name");
+  var pic = document.querySelector("#pic");
+  var link = document.querySelector("#link");
+  var stargazers = document.querySelector("#stargazers");
+  var forks = document.querySelector("#forks");
+  var language = document.querySelector("#language");
   button.addEventListener("click", () => {
     fetchGithubRepo(repoName.value, (data) => {
-      console.log(data);
+      name.innerText = `name: ${data.name}`;
+      pic.innerText = `pic: `;
+      link.innerText = `link: ${data.html_url}`;
+      stargazers.innerText = `stargazer count: ${data.stargazers_count}`;
+      forks.innerText = `number of forks: ${data.forks}`;
+      language.innerText = `programming language: ${data.language}`;
     });
   });
 })();
