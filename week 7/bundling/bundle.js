@@ -6,8 +6,8 @@
   // fetchGithubRepo.js
   var require_fetchGithubRepo = __commonJS({
     "fetchGithubRepo.js"(exports, module) {
-      function fetchGithubRepo2(repoName, callback) {
-        fetch(`https://api.github.com/repos/${repoName}`).then((response) => response.json()).then((jsonData) => {
+      function fetchGithubRepo2(repoName2, callback) {
+        fetch(`https://api.github.com/repos/${repoName2}`).then((response) => response.json()).then((jsonData) => {
           callback(jsonData);
         });
       }
@@ -17,8 +17,11 @@
 
   // index.js
   var fetchGithubRepo = require_fetchGithubRepo();
-  fetchGithubRepo("sinatra/sinatra", (data) => {
-    console.log(data);
-    document.write(JSON.stringify(data));
+  var repoName = document.querySelector("#repo_name");
+  var button = document.querySelector("#btn");
+  button.addEventListener("click", () => {
+    fetchGithubRepo(repoName.value, (data) => {
+      console.log(data);
+    });
   });
 })();

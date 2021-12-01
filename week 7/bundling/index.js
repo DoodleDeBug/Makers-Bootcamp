@@ -1,6 +1,10 @@
 const fetchGithubRepo = require("./fetchGithubRepo");
 
-fetchGithubRepo("sinatra/sinatra", (data) => {
-  console.log(data);
-  document.write(JSON.stringify(data));
+const repoName = document.querySelector("#repo_name");
+const button = document.querySelector("#btn");
+
+button.addEventListener("click", () => {
+  fetchGithubRepo(repoName.value, (data) => {
+    console.log(data);
+  });
 });
