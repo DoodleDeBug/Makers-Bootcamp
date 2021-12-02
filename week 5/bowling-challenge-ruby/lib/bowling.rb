@@ -40,11 +40,17 @@ class Bowling
       @score = 300
     else
       results.each_pair do |frame, rolls|
+
+        index = frame.to_s[-1].to_i # turn the key into a string, grab the last character, turn it into an int
+
+        next_frame = results["frame_#{index + 1}".to_sym]
+
         if rolls.sum != 10 # no spares or strikes, just sum the scores for each frame
           @score += rolls.sum
-        else # if sum of rolls is 10, add the first roll of next frame (spare)
-          index = frame.to_s[-1].to_i # turn the key into a string, grab the last character, turn it into an int
-          @score = @score + rolls.sum + results["frame_#{index + 1}".to_sym][0] # access the first roll of the next frame
+        elsif rolls.sum === 10 && rolls.length == 1 # a strike
+          @score = @score + rolls.sum + next_frame[0] + next_frame[1]# adds the first two rolls of the next frame
+        else # a spare
+          @score = @score + rolls.sum + next_frame[0] # add the first roll of the next frame
         end
       end
 
