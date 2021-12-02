@@ -149,5 +149,42 @@ describe Bowling do
 
       expect(game.score).to eq 73
     end
+
+    it 'calculates the total score of a game with multiple strikes:' do
+      game = Bowling.new
+      game.calculate_score({
+        frame_1: [10], # 17
+        frame_2: [2, 5], # 7
+        frame_3: [2, 5], # 7
+        frame_4: [10], # 13
+        frame_5: [3, 0], # 3
+        frame_6: [1, 1], # 2
+        frame_7: [1, 5], # 6
+        frame_8: [10], # 17
+        frame_9: [6, 1], # 7
+        frame_10: [5, 2] # 7
+      })
+
+      expect(game.score).to eq 86
+    end
+
+    it 'calculates the total score of a game with a strike in the 10th frame:' do
+      game = Bowling.new
+      game.calculate_score({
+        frame_1: [5, 1], # 6
+        frame_2: [2, 5], # 7
+        frame_3: [2, 5], # 7
+        frame_4: [7, 1], # 8
+        frame_5: [3, 0], # 3
+        frame_6: [1, 1], # 2
+        frame_7: [1, 5], # 6
+        frame_8: [9, 0], # 9
+        frame_9: [6, 1], # 7
+        frame_10: [10, 5, 7] # 22
+      })
+
+      expect(game.score).to eq 77
+    end
+
   end
 end
