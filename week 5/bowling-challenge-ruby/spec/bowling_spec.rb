@@ -186,5 +186,23 @@ describe Bowling do
       expect(game.score).to eq 77
     end
 
+    it 'calculates the total score of a game with a mix of strikes and spares and normal rolls:' do
+      game = Bowling.new
+      game.calculate_score({ 
+        frame_1: [1, 4], # 5
+        frame_2: [4, 5], # 9
+        frame_3: [6, 4], # 15
+        frame_4: [5, 5], # 20
+        frame_5: [10], # 11
+        frame_6: [0, 1], # 1
+        frame_7: [7, 3], # 16
+        frame_8: [6, 4], # 20
+        frame_9: [10], # 20
+        frame_10: [2, 8, 6] # 16
+      })
+
+      expect(game.score).to eq 133
+    end
+
   end
 end
