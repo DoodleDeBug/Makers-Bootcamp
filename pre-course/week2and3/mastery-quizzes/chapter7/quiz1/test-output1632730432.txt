@@ -1,0 +1,275 @@
+.FF.FFFFFFFFF
+
+Failures:
+
+  1) Q1. Bar grapher user enters single number: 10 outputs single bar of 10 dashes
+     Failure/Error:
+       expect { load "questions/question_1.rb" }
+         .to output(/#{expected_output}/).to_stdout
+
+       expected block to output /----------
+       / to stdout, but output nothing
+       Diff:
+       @@ -1,3 +1,2 @@
+       -/----------
+       -/
+       +""
+     # ./spec/question_1_spec.rb:39:in `set_user_input_and_check_expected_output'
+     # ./spec/question_1_spec.rb:9:in `block (3 levels) in <top (required)>'
+
+  2) Q1. Bar grapher user enters many numbers: 10,4,2,7,5,1 outputs one bar for each number
+     Failure/Error:
+       expect { load "questions/question_1.rb" }
+         .to output(/#{expected_output}/).to_stdout
+
+       expected block to output /----------
+       ----
+       --
+       -------
+       -----
+       -/ to stdout, but output nothing
+       Diff:
+       @@ -1,7 +1,2 @@
+       -/----------
+       -----
+       ---
+       --------
+       ------
+       --/
+       +""
+     # ./spec/question_1_spec.rb:39:in `set_user_input_and_check_expected_output'
+     # ./spec/question_1_spec.rb:26:in `block (3 levels) in <top (required)>'
+
+  3) Q2. People grouper user asks to put 5 people into 1 group, prints the group outputs one group with all five people in it
+     Failure/Error:
+       expect { load "questions/question_2.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /Mary, Lauren, Awad, Govind, Isla
+       /m to stdout, but output nothing
+       Diff:
+       @@ -1,3 +1,2 @@
+       -/Mary, Lauren, Awad, Govind, Isla
+       -/m
+       +""
+     # ./spec/question_2_spec.rb:85:in `set_user_input_and_check_expected_output'
+     # ./spec/question_2_spec.rb:17:in `block (3 levels) in <top (required)>'
+
+  4) Q2. People grouper user asks to put 0 people into 1 group, and output 1 empty group outputs one empty group
+     Failure/Error:
+       expect { load "questions/question_2.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /
+       /m to stdout, but output nothing
+       Diff:
+       @@ -1,3 +1,2 @@
+       -/
+       -/m
+       +""
+     # ./spec/question_2_spec.rb:85:in `set_user_input_and_check_expected_output'
+     # ./spec/question_2_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+  5) Q2. People grouper user asks to put 5 people into 3 groups, prints all 3 groups outputs three groups, two people first two, one person in third
+     Failure/Error:
+       expect { load "questions/question_2.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /Mary, Govind
+       .*Lauren, Isla
+       .*Awad/m to stdout, but output nothing
+       Diff:
+       @@ -1,4 +1,2 @@
+       -/Mary, Govind
+       -.*Lauren, Isla
+       -.*Awad/m
+       +""
+     # ./spec/question_2_spec.rb:85:in `set_user_input_and_check_expected_output'
+     # ./spec/question_2_spec.rb:52:in `block (3 levels) in <top (required)>'
+
+  6) Q2. People grouper user asks to put 0 people into 3 groups, prints all 3 groups outputs three groups, all groups empty
+     Failure/Error:
+       expect { load "questions/question_2.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /
+       .*
+       .*/m to stdout, but output nothing
+       Diff:
+       @@ -1,4 +1,2 @@
+       -/
+       -.*
+       -.*/m
+       +""
+     # ./spec/question_2_spec.rb:85:in `set_user_input_and_check_expected_output'
+     # ./spec/question_2_spec.rb:70:in `block (3 levels) in <top (required)>'
+
+  7) Q3. Crocodile river has acceptable code quality
+     Failure/Error: expect(code_quality.acceptable?).to(eq(true), code_quality.problems)
+
+       Inspecting 1 file
+       W
+
+       Offenses:
+
+       questions/question_3.rb:65:1: W: Lint/UselessAssignment: Useless assignment to variable - river.
+       river = "-----,--C--,CC-CC,CC-CC"
+       ^^^^^
+
+       1 file inspected, 1 offense detected
+
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+     # ./spec/question_3_spec.rb:99:in `block (2 levels) in <top (required)>'
+
+  8) Q3. Crocodile river player inputs `neither` outputs river before first turn, then You were eaten!
+     Failure/Error:
+       expect { load "questions/question_3.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /--P--
+       --C--
+       CC-CC
+       CC-CC
+       .*You were eaten.$/m to stdout, but output nothing
+       Diff:
+       @@ -1,6 +1,2 @@
+       -/--P--
+       ---C--
+       -CC-CC
+       -CC-CC
+       -.*You were eaten.$/m
+       +""
+     # ./spec/question_3_spec.rb:106:in `set_user_input_and_check_expected_output'
+     # ./spec/question_3_spec.rb:16:in `block (3 levels) in <top (required)>'
+
+  9) Q3. Crocodile river player inputs `right, neither` outputs river at each turn, then You were eaten!
+     Failure/Error:
+       expect { load "questions/question_3.rb" }
+         .to output(/#{expected_output}/m).to_stdout
+
+       expected block to output /--P--
+       --C--
+       CC-CC
+       CC-CC
+       .*-----
+       --CP-
+       CC-CC
+       CC-CC
+       .*You were eaten.$/m to stdout, but output nothing
+       Diff:
+       @@ -1,10 +1,2 @@
+       -/--P--
+       ---C--
+       -CC-CC
+       -CC-CC
+       -.*-----
+       ---CP-
+       -CC-CC
+       -CC-CC
+       -.*You were eaten.$/m
+       +""
+     # ./spec/question_3_spec.rb:106:in `set_user_input_and_check_expected_output'
+     # ./spec/question_3_spec.rb:36:in `block (3 levels) in <top (required)>'
+
+  10) Q3. Crocodile river player inputs `right, left, right` outputs river at each turn, then You were eaten!
+      Failure/Error:
+        expect { load "questions/question_3.rb" }
+          .to output(/#{expected_output}/m).to_stdout
+
+        expected block to output /--P--
+        --C--
+        CC-CC
+        CC-CC
+        .*-----
+        --CP-
+        CC-CC
+        CC-CC
+        .*-----
+        --C--
+        CCPCC
+        CC-CC
+        .*You were eaten.$/m to stdout, but output nothing
+        Diff:
+        @@ -1,14 +1,2 @@
+        -/--P--
+        ---C--
+        -CC-CC
+        -CC-CC
+        -.*-----
+        ---CP-
+        -CC-CC
+        -CC-CC
+        -.*-----
+        ---C--
+        -CCPCC
+        -CC-CC
+        -.*You were eaten.$/m
+        +""
+      # ./spec/question_3_spec.rb:106:in `set_user_input_and_check_expected_output'
+      # ./spec/question_3_spec.rb:60:in `block (3 levels) in <top (required)>'
+
+  11) Q3. Crocodile river player moves left, right, neither, neither outputs river at each turn, then You survived!
+      Failure/Error:
+        expect { load "questions/question_3.rb" }
+          .to output(/#{expected_output}/m).to_stdout
+
+        expected block to output /--P--
+        --C--
+        CC-CC
+        CC-CC
+        .*-----
+        -PC--
+        CC-CC
+        CC-CC
+        .*-----
+        --C--
+        CCPCC
+        CC-CC
+        .*-----
+        --C--
+        CC-CC
+        CCPCC
+        .*You survived!$/m to stdout, but output nothing
+        Diff:
+        @@ -1,18 +1,2 @@
+        -/--P--
+        ---C--
+        -CC-CC
+        -CC-CC
+        -.*-----
+        --PC--
+        -CC-CC
+        -CC-CC
+        -.*-----
+        ---C--
+        -CCPCC
+        -CC-CC
+        -.*-----
+        ---C--
+        -CC-CC
+        -CCPCC
+        -.*You survived!$/m
+        +""
+      # ./spec/question_3_spec.rb:106:in `set_user_input_and_check_expected_output'
+      # ./spec/question_3_spec.rb:91:in `block (3 levels) in <top (required)>'
+
+Finished in 6.39 seconds (files took 0.32863 seconds to load)
+13 examples, 11 failures
+
+Failed examples:
+
+rspec ./spec/question_1_spec.rb:8 # Q1. Bar grapher user enters single number: 10 outputs single bar of 10 dashes
+rspec ./spec/question_1_spec.rb:25 # Q1. Bar grapher user enters many numbers: 10,4,2,7,5,1 outputs one bar for each number
+rspec ./spec/question_2_spec.rb:16 # Q2. People grouper user asks to put 5 people into 1 group, prints the group outputs one group with all five people in it
+rspec ./spec/question_2_spec.rb:28 # Q2. People grouper user asks to put 0 people into 1 group, and output 1 empty group outputs one empty group
+rspec ./spec/question_2_spec.rb:51 # Q2. People grouper user asks to put 5 people into 3 groups, prints all 3 groups outputs three groups, two people first two, one person in third
+rspec ./spec/question_2_spec.rb:69 # Q2. People grouper user asks to put 0 people into 3 groups, prints all 3 groups outputs three groups, all groups empty
+rspec ./spec/question_3_spec.rb:97 # Q3. Crocodile river has acceptable code quality
+rspec ./spec/question_3_spec.rb:15 # Q3. Crocodile river player inputs `neither` outputs river before first turn, then You were eaten!
+rspec ./spec/question_3_spec.rb:35 # Q3. Crocodile river player inputs `right, neither` outputs river at each turn, then You were eaten!
+rspec ./spec/question_3_spec.rb:59 # Q3. Crocodile river player inputs `right, left, right` outputs river at each turn, then You were eaten!
+rspec ./spec/question_3_spec.rb:90 # Q3. Crocodile river player moves left, right, neither, neither outputs river at each turn, then You survived!
+
