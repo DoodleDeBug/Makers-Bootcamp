@@ -11,6 +11,9 @@ Count and sum the scores of a bowling game for one player.
 2. `cd` into the folder
 3. Run `rspec` in the project directory
 
+![image](https://user-images.githubusercontent.com/75613073/144433744-678d6f3a-d83f-40a3-bf38-d08d74cbd15c.png)
+
+
 ## Tech Used:
 
 - Ruby
