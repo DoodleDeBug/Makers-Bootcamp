@@ -1,0 +1,53 @@
+img {
+  position: relative;
+}
+
+.card rounded mb-5 pt-2 {
+  border-radius: 5%;
+}
+
+.facebook {
+  width: 45%;
+  position: relative;
+  left: 30%;
+}
+
+/* input[type="submit"] {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5%;
+} */
+
+#input-form {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 40%;
+}
+
+#posts {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 70%;
+  overflow: scroll;
+  height: 40%;
+  width: 70%;
+}
+
+
+/* #like-section {
+  position:relative;
+  left: 170%;
+  top: -100%;
+  width: 20%;
+
+} */
+
+/* #like-count {
+  top: 0%;
+  left: 200%;
+} */
+
+

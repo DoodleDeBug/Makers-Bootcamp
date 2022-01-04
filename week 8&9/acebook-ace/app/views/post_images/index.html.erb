@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="post_images.css">
+<body style="overflow-y: scroll;"
+<p id="notice"><%= notice %></p>
+
+<h1 class="h1 text-center mb-3 mt-4">Posts</h1>
+<div class= "row text-center mb-3">
+<%= link_to "Create New Post", new_post_image_path, :class=> "back" %>
+<%= link_to 'Chat', rooms_path %>
+</div>
+
+<% @post_images.each do |post_image| %>
+  <div class="card rounded mb-3 pt-2 facebook" >
+    <div class="row">
+      <div class="col pl-2 text-center">
+        <%if post_image.user.image.attached?%>
+          <%=image_tag(post_image.user.image, height: '100', width: '100', :class => "profile-pic")%>
+        <%else%>
+          <%=image_tag "profile pic.png", :class => "profile-pic"%>
+        <%end%>
+      </div>
+      <div class="col-10 text-start">
+        <p class="font-weight-bold fs-6 m-0"><%= post_image.user.email %></p>
+        <p class="text-muted"><%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %></p>
+      </div>
+    </div>
+    <% if post_image.image.attached? %>
+      <%= image_tag post_image.image, :class => "card-img-top"%>
+    <% end %>
+    <div class="card-body">
+      <div>
+        <h5 class="card-title"><%= post_image.title %></h5>
+        <p class="card-text"><%= post_image.content %></p>
+        <% if post_image.user == Current.user %>
+          <%= link_to 'Edit', edit_post_image_path(post_image), :class => "card-link" %>
+          <%= link_to 'Delete', post_image, method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+        <% end %>
+      </div>
+      <hr>
+      <%# divider %>
+      <div class="row mt-3 ">
+        <div class="col-6 text-center">
+          <div >
+            <% pre_like = post_image.likes.find { |like| like.user_id == Current.user.id} %>
+             <%= post_image.likes.count%>
+              <% (post_image.likes.count) == 1 ? 'Like' : 'Likes' %>
+            <% if pre_like %>
+              <%= link_to 'Unlike', post_image_like_path(post_image, pre_like), :class=> "bi bi-hand-thumbs-up-fill like", method: :delete %>
+            <% else %>
+              <%= link_to 'Like', post_image_likes_path(post_image), :class=> "bi bi-hand-thumbs-up like", method: :post_image %>
+            <% end %>
+            
+            
+          </div>
+        </div>
+        <div class= "col-6 text-center">
+          <% if post_image.comments %>
+            <p>
+              <%= post_image.comments.count %>
+              <%= link_to 'Comment', post_image, :class => "bi bi-chat-text chat" %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+</body>

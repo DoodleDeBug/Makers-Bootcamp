@@ -1,0 +1,7 @@
+{
+  "name": "acebook",
+  "private": true,
+  "dependencies": {
+    "bootstrap-icons": "^1.7.2"
+  }
+}

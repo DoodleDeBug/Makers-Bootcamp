@@ -1,0 +1,71 @@
+<link rel="stylesheet" type="text/css" href="post_images.css">
+<link rel="stylesheet" type="text/css" href="comments.css">
+
+<body style="overflow-y: scroll;"
+<p id="notice"><%= notice %></p>
+<div class="card rounded mb-5 pt-2 facebook">
+  <div class ="row pb-2">
+    <div class = "col">
+      <%if @post_image.user.image.attached?%>
+        <%=image_tag(@post_image.user.image, height: '50', width: '50')%>
+      <%else%>
+        <%=image_tag "profile pic.png", :class => "profile-pic"%>
+      <%end%>
+    </div>
+    <div class="col-10">
+      <p class="font-weight-bold fs-6"><%= @post_image.user.email %></p>
+    </div>
+  </div>
+  <% if @post_image.image.attached? %>
+    <%= image_tag @post_image.image, :class => "card-img-top" %>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @post_image.title %></h5>
+    <p class="card-text"><%= @post_image.content %></p>
+    <% if @post_image.user == Current.user %>
+      <%= link_to 'Edit', edit_post_image_path(@post_image), :class => "card-link" %>  |
+    <% end %>
+    <%= link_to 'Back', post_images_path, :class => "card-link" %>
+  </div>
+</div>
+</div>
+<%# divider %>
+<h2 class="h2 text-center tag">Comments</h2>
+<% @post_image.comments.each do |comment| %>
+  <div class="card  mb-5 p-2 facebook">
+    <div class="card-body">
+      <div class = "row mb-3">
+        <div class = "col-2">
+          <%if comment.user.image.attached?%>
+            <%=image_tag(comment.user.image, height: '50', width: '50', :class => "profile-pic")%>
+          <%else%>
+            <%=image_tag "profile pic.png", :class => "profile-pic"%>
+          <%end%>
+        </div>
+        <div class = "col-10">
+          <h5 class="card-title"><%= comment.user.email %></h5>
+          <p class="card-subtitle mb-2 text-muted"><%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %> </p>
+        </div>
+      </div>
+      <div class="bg-light p-3 rounded-3">
+        <p class="card-text fs-6"><%= comment.body %></p>
+      </div>
+    </div>
+    <% if comment.user == Current.user %>
+      <%= link_to 'Delete Comment', [comment.post_image, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+</div>
+<% end %>
+<%# divider %>
+<h2 class="h2 text-center tag">Add a comment</h2>
+<div class="">
+  <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
+    <%= form.label :body, :class => "form-label" %>
+    <%= form.text_area :body, :class => "form-control" %><br>
+    <%= form.submit  %>
+  <% end %>
+</div>
+</body>

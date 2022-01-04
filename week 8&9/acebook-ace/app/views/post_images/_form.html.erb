@@ -1,0 +1,33 @@
+<%= form_with(model: post_image) do |form| %>
+  <% if post_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post_image.errors.count, "error") %> prohibited this post_image from being saved:</h2>
+
+      <ul>
+        <% post_image.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="container">
+     <div class ="row rounded-3 ">
+  
+    <%= form.label :title, :class => "form-label"  %>
+    <%= form.text_field :title, :class => "form-control mb-3"  %>
+    <%= form.label :content, :class => "form-label"  %>
+    <%= form.text_area :content , :class => "form-control mb-3" %>
+    <%= form.label :image, :class => "form-label"  %>
+    <%= form.file_field :image, :class => "form-control mb-3" %>
+    <%= form.submit "Submit", :class => "btn btn-primary"%>
+  </div>
+  
+  </div>
+<% end %>
+
+   
+
+
+ 

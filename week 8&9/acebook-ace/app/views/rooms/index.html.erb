@@ -1,0 +1,44 @@
+<div id="room-id" data-room-id="<%= @room.try(:id) %>"></div>
+<div id="user-id" data-user-id="<%= Current.user.id %>"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 rooms-sidebar">
+      <div class="card no-outline">
+        <div class="card-body">
+          <small>Logged in as</small><br>
+          <b><%= Current.user.email %><br></b>
+          <%= link_to 'Back to Posts', post_images_path %>
+        </div>
+      </div>
+
+<%= render 'form', room: Room.new %>
+<hr>
+<% @rooms.each do |room| %>
+        <%= link_to room, class: 'room-link' do %>
+          <% active_class = (@room == room) ? 'active' : '' %>
+          <div class="card no-outline mb-2 room-card <%= active_class %>">
+            <div class="card-body">
+              <span class='name'><%= room.name %></span><br>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+</div>
+<div class= 'col-9'>
+<% if @room.present? %>
+<div class='chat-room'>
+<p><%= @room.name %></p>
+<div id="messages">
+            <% @room.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
+            <% end %>
+          </div>
+<div class='chat-box'>
+<%= render 'messages/form', message: Message.new, room: @room %>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+</div>

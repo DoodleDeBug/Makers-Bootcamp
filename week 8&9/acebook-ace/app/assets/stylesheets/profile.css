@@ -1,0 +1,57 @@
+body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f0f2f5;
+    }
+
+.profile {
+
+    border-radius: 50%;
+    height: auto;
+    width: 100px;
+    margin-right: 5px;
+}
+
+.profile-pic {
+  margin-left:3px;
+  margin-right:0;
+  padding-left:1px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.card{
+   border-style: none;
+   box-shadow: 0px 1px 2px rgb(197, 196, 196);
+   border-radius: 10px !important;
+
+}
+
+.chat {
+   color: grey;
+   font-size: large;
+   text-decoration: none;
+}
+
+.like{
+    color: grey;
+    font-size: large;
+    text-decoration: none;
+
+
+}
+
+.card-link{
+    color: grey;
+    font-size: large;
+    text-decoration: none;
+}
+
+
+.back{
+    color: grey;
+    font-size: large;
+    text-decoration: none;
+
+
+}

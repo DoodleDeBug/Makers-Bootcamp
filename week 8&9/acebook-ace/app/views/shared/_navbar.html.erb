@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="navbar.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand acebook_logo" href="/post_images"><img src="ace.png" width="auto" height="30" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <%if Current.user%>
+          <li class="nav-item username">
+            <%=Current.user.email%>
+          </li>
+          <li class="nav-item">
+            <%if Current.user.image.attached? == false%>
+              <%=image_tag "profile pic.png", :class => "profile-pic"%>
+            <%else%>
+              <%=image_tag(Current.user.image, :class => "profile-pic")%>
+            <%end%>
+          </li>
+          <li class="nav-item logout ">
+            <%= button_to "Logout", logout_path, method: :delete, :class => "pretty" %>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</nav>
