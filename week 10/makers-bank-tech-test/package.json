@@ -1,0 +1,24 @@
+{
+  "name": "makers-bank-tech-test",
+  "version": "1.0.0",
+  "description": "tech test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoodleDeBug/makers-bank-tech-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoodleDeBug/makers-bank-tech-test/issues"
+  },
+  "homepage": "https://github.com/DoodleDeBug/makers-bank-tech-test#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "jest": "^27.4.5"
+  }
+}
