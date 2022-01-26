@@ -1,0 +1,27 @@
+{
+  "name": "makers-notes",
+  "version": "1.0.0",
+  "description": "Single page frontend notes application in JS",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoodleDeBug/makers-notes-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoodleDeBug/makers-notes-js/issues"
+  },
+  "homepage": "https://github.com/DoodleDeBug/makers-notes-js#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
+}

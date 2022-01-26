@@ -1,0 +1,26 @@
+{
+  "name": "bowling-challenge",
+  "version": "1.0.0",
+  "description": "BOWLING SCORECARD PROGRAM in JavaScript =================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoodleDeBug/bowling-challenge-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoodleDeBug/bowling-challenge-js/issues"
+  },
+  "homepage": "https://github.com/DoodleDeBug/bowling-challenge-js#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0"
+  }
+}
