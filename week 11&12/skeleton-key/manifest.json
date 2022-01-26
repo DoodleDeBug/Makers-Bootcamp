@@ -1,0 +1,18 @@
+{
+  "name": "Skeleton Key",
+  "description": "Testing ",
+  "version": "1.0",
+  "manifest_version": 3,
+  "options_page": "pages/options.html",
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "16": "/images/skeleton.png"
+    },
+    "icons": { "16": "/images/skeleton.png" }
+  }
+}
